@@ -53,7 +53,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				3
+				3,
+				5
 			]
 		}
 	],
@@ -87,7 +88,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				3
+				3,
+				5
 			]
 		},
 		{
@@ -95,7 +97,8 @@
 			"sourceIndexes" : 
 			[
 				1,
-				2
+				2,
+				4
 			]
 		}
 	],
@@ -121,6 +124,17 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "dataFrame.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "column.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "column.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

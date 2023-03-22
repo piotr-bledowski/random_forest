@@ -8,10 +8,15 @@
 #endif //RF_CPP_DATAFRAME_H
 
 #include "rapidcsv.h"
+#include <vector>
 
 class dataFrame {
-
+    rapidcsv::Document doc_;
 
 public:
-    
+    dataFrame(std::string doc_name);
+
+    template <typename T> std::vector<std::vector<T>> get_columns(std::vector<std::string> column_names);
+
+
 };
