@@ -11,6 +11,7 @@
 #include <vector>
 
 class dataFrame {
+private:
     rapidcsv::Document doc_;
 
 public:

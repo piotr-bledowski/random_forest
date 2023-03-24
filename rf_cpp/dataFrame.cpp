@@ -9,5 +9,11 @@ dataFrame::dataFrame(std::string doc_name) {
 }
 
 template <typename T> std::vector<std::vector<T>> get_columns(std::vector<std::string> column_names) {
+    std::vector<std::vector<T>> columns;
+    for (std::string name : column_names) {
+        columns.push_back(doc_.GetColumn(name));
+    }
 
+    return columns;
 }
+
