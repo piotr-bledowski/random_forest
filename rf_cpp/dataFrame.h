@@ -9,6 +9,7 @@
 
 #include "rapidcsv.h"
 #include <vector>
+#include "column.h"
 
 class dataFrame {
 private:

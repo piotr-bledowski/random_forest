@@ -10,6 +10,7 @@
 
 #include "rapidcsv.h"
 #include <vector>
+#include <string>
 
 
 template <typename T>
@@ -18,6 +19,8 @@ private:
     std::string label_;
     std::vector<T> cells_;
 public:
+    Column(std::string col_label, std::vector<T> col_data);
+
     std::string get_label() {
         return label_;
     }
