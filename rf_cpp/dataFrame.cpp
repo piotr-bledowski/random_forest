@@ -6,9 +6,11 @@
 #include "column.h"
 #include "utils/vectorUtils.h"
 
-DataFrame::DataFrame(std::string doc_name) {
-    //doc_ = rapidcsv::Document(doc_name, rapidcsv::LabelParams(0, 0));
+DataFrame::DataFrame(std::vector<std::string> row_labels, std::vector<column> columns) {
+    row_labels_ = row_labels;
+    columns_ = columns;
 }
+
 
 std::vector<column> DataFrame::getColumns(std::vector<std::string> column_names) const {
     std::vector<column> columns;
@@ -21,3 +23,12 @@ std::vector<column> DataFrame::getColumns(std::vector<std::string> column_names)
     return columns;
 }
 
+template <typename T>
+Column<T> DataFrame::getColumn(std::string column_name) const {
+    for (column col : columns_) {
+        if (getColumnVariantLabel(col) == column_name)
+            return col;
+    }
+
+    return NULL;
+}
