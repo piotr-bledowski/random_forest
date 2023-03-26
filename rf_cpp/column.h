@@ -21,11 +21,11 @@ private:
 public:
     Column(std::string col_label, std::vector<T> col_data);
 
-    std::string get_label() {
+    std::string getLabel() {
         return label_;
     }
 
-    std::vector<T> get_cells() {
+    std::vector<T> getCells() {
         return cells_;
     }
 };

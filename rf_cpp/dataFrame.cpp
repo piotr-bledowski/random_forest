@@ -4,15 +4,18 @@
 #include "dataFrame.h"
 #include "rapidcsv.h"
 #include "column.h"
+#include "utils/vectorUtils.h"
 
-dataFrame::dataFrame(std::string doc_name) {
-    doc_ = rapidcsv::Document(doc_name, rapidcsv::LabelParams(0, 0));
+DataFrame::DataFrame(std::string doc_name) {
+    //doc_ = rapidcsv::Document(doc_name, rapidcsv::LabelParams(0, 0));
 }
 
-template <typename T> std::vector<std::vector<T>> dataFrame::get_columns(std::vector<std::string> column_names) {
-    std::vector<std::vector<T>> columns;
-    for (std::string name : column_names) {
-        columns.push_back(doc_.GetColumn<T>(name));
+std::vector<column> DataFrame::getColumns(std::vector<std::string> column_names) const {
+    std::vector<column> columns;
+    for (column col : columns_) {
+        if (isInVector(getColumnVariantLabel(col), column_names)) {
+            columns.push_back(col);
+        }
     }
 
     return columns;
