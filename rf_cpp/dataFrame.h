@@ -23,8 +23,6 @@ private:
 public:
     DataFrame(std::vector<std::string> row_labels, std::vector<column> columns);
 
-    template <typename T> std::vector<std::vector<T>> getColumns(std::vector<std::string> column_names);
-
     std::vector<column> getAllColumns() const {
         return columns_;
     }

@@ -32,3 +32,4 @@ Column<T> DataFrame::getColumn(std::string column_name) const {
 
     return NULL;
 }
+
