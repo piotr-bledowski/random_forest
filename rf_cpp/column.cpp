@@ -6,9 +6,9 @@
 #include <string>
 
 template <typename T>
-Column<T>::Column(std::string col_label, std::vector<T> col_data) {
-    label_ = col_label;
+Column<T>::Column(std::vector<T> col_data) {
     cells_ = col_data;
+
 }
 
 template <typename T>

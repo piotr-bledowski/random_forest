@@ -17,7 +17,9 @@ class ColumnWrapper {
 private:
     column_variant column_;
 public:
-    ColumnWrapper(std::vector<column_variant> column) {
-        //column_ = column;
+    ColumnWrapper(column_variant column) {
+        column_ = column;
     }
+
+    bool operator==
 };

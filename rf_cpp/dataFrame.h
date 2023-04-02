@@ -14,7 +14,7 @@
 #include <map>
 
 // using std::variant here to ensure flexibility (basically the columns vector may store Columns of multiple data types)
-using column_t = std::variant<Column<long>, Column<double>, Column<std::string>, Column<bool>>;
+using column_t = std::variant<Column<long>*, Column<double>*, Column<std::string>*, Column<bool>*>;
 
 class DataFrame {
 private:
@@ -31,7 +31,11 @@ public:
     std::map<std::string, column_t> getColumns(std::vector<std::string> column_names) const;
 
     template <typename T>
-    std::vector<T> getColumn(std::string column_name) const {
-        return columns_.at(column_name);
+    std::vector<T> getColumn(const std::string& column_name) const {
+        return std::get<Column<T>*>(columns_.at(column_name))->data();
+    }
+
+    bool containsColumn(const std::string& col) {
+        return columns_.contains(col);
     }
 };

@@ -18,16 +18,11 @@
 template <typename T>
 class Column {
 private:
-//    std::string label_;
     std::vector<T> cells_;
 public:
-    Column(std::string col_label, std::vector<T> col_data);
+    Column(std::vector<T> col_data);
 
-//    std::string getLabel() {
-//        return label_;
-//    }
-
-    std::vector<T> getCells() {
+    std::vector<T> data() {
         return cells_;
     }
 
