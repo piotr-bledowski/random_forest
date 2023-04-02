@@ -148,17 +148,6 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "columnVector.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "columnVector.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"path" : "utils/vectorUtils.h",
 			"sourceGroupIndex" : 1
 		},
@@ -177,6 +166,17 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "tests/tests.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "columnWrapper.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "columnWrapper.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

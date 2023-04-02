@@ -11,24 +11,27 @@
 #include <vector>
 #include "column.h"
 #include <variant>
+#include <map>
 
 // using std::variant here to ensure flexibility (basically the columns vector may store Columns of multiple data types)
-using column = std::variant<Column<long>, Column<double>, Column<std::string>, Column<bool>>;
+using column_t = std::variant<Column<long>, Column<double>, Column<std::string>, Column<bool>>;
 
 class DataFrame {
 private:
     std::vector<std::string> row_labels_;
-    std::vector<column> columns_;
+    std::map<std::string, column_t> columns_;
 
 public:
-    DataFrame(std::vector<std::string> row_labels, std::vector<column> columns);
+    DataFrame(std::vector<std::string> row_labels, std::vector<std::string> column_labels, std::vector<column_t> columns);
 
-    std::vector<column> getAllColumns() const {
+    std::map<std::string, column_t> getAllColumns() const {
         return columns_;
     }
 
-    std::vector<column> getColumns(std::vector<std::string> column_names) const;
+    std::map<std::string, column_t> getColumns(std::vector<std::string> column_names) const;
 
     template <typename T>
-    Column<T> getColumn(std::string column_name) const;
+    std::vector<T> getColumn(std::string column_name) const {
+        return columns_.at(column_name);
+    }
 };
