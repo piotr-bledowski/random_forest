@@ -32,10 +32,19 @@ TEST_CASE("DataFrame.getColumn returns correct value", "[getColumn]") {
 
 // Column test cases
 
-TEST_CASE("Column.mean() returns correct value", "[Column.mean()]") {
+TEST_CASE("Column.mean() returns correct value for integer values", "[Column.mean()]") {
     std::vector<long> nums = {10, 15, 12, 13, 9, 16};
     double mean = 12.5;
     Column<long> nums_column = Column<long>(nums);
+
+    REQUIRE(std::abs(mean - nums_column.mean()) < std::numeric_limits<double>::epsilon());
+}
+
+TEST_CASE("Column.mean() returns correct value for float values", "[Column.mean()]") {
+    std::vector<double> nums = {235.345, 15.34, 12.73, 13.0, 54234.234, 16.67, 7.777777};
+    double mean = 7790.728111;
+    Column<double> nums_column = Column<double>(nums);
+    double col_mean = nums_column.mean();
 
     REQUIRE(std::abs(mean - nums_column.mean()) < std::numeric_limits<double>::epsilon());
 }
