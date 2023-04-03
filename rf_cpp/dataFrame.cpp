@@ -3,7 +3,6 @@
 //
 #include "dataFrame.h"
 #include "rapidcsv.h"
-#include "column.h"
 #include "utils/vectorUtils.h"
 
 DataFrame::DataFrame(std::vector<std::string> row_labels, std::vector<std::string> column_names, std::vector<column_t> columns) {

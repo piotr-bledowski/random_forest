@@ -1,6 +1,7 @@
 //
 // Created by piotr on 26.03.23.
 //
+#define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "../dataFrame.h"
 
@@ -23,9 +24,11 @@ TEST_CASE("DataFrame.getColumn returns correct value", "[getColumn]") {
 
     DataFrame dataFrame = DataFrame(row_labels, column_labels, columns);
 
-    REQUIRE(names == dataFrame.getColumn<std::string>("names"));
+    REQUIRE(names == dataFrame.getColumn<std::string>("name"));
+    REQUIRE(ages == dataFrame.getColumn<long>("age"));
+    REQUIRE(some_floats == dataFrame.getColumn<double>("some_float"));
 }
 
-TEST_CASE("DataFrame.getAllColumns returns correct value", "[getColumn]") {
-    
-}
+//TEST_CASE("DataFrame.getAllColumns returns correct value", "[getAllColumns]") {
+//
+//}
