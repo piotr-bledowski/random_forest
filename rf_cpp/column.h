@@ -30,7 +30,7 @@ public:
 
     bool operator == (const Column &col) {
         for (int i = 0; i < cells_.size(); i++) {
-            if (cells_[i] != col.getCells()[i])
+            if (cells_[i] != col.data()[i])
                 return false;
         }
 

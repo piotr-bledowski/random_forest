@@ -31,7 +31,7 @@ public:
     std::map<std::string, column_t> getColumns(std::vector<std::string> column_names) const;
 
     template <typename T>
-    std::vector<T> getColumn(const std::string& column_name) {
+    Column<T> getColumn(const std::string& column_name) {
         auto it = columns_.find(column_name);
 
         //! if column_name not in keys
@@ -39,7 +39,7 @@ public:
             throw std::runtime_error("Column not in dataFrame!");
 
         auto column_ptr = std::get<Column<T>*>(it->second);
-        return column_ptr->data();
+        return *column_ptr;
     }
 
     bool containsColumn(const std::string& col) {

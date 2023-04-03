@@ -24,9 +24,9 @@ TEST_CASE("DataFrame.getColumn returns correct value", "[getColumn]") {
 
     DataFrame dataFrame = DataFrame(row_labels, column_labels, columns);
 
-    REQUIRE(names == dataFrame.getColumn<std::string>("name"));
-    REQUIRE(ages == dataFrame.getColumn<long>("age"));
-    REQUIRE(some_floats == dataFrame.getColumn<double>("some_float"));
+    REQUIRE(names == dataFrame.getColumn<std::string>("name").data());
+    REQUIRE(ages == dataFrame.getColumn<long>("age").data());
+    REQUIRE(some_floats == dataFrame.getColumn<double>("some_float").data());
 }
 
 //TEST_CASE("DataFrame.getAllColumns returns correct value", "[getAllColumns]") {
