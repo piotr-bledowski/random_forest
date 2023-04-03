@@ -4,6 +4,7 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "../dataFrame.h"
+#include <limits> // standard-defined value of epsilon
 
 // DataFrame test cases
 
@@ -27,6 +28,16 @@ TEST_CASE("DataFrame.getColumn returns correct value", "[getColumn]") {
     REQUIRE(names == dataFrame.getColumn<std::string>("name").data());
     REQUIRE(ages == dataFrame.getColumn<long>("age").data());
     REQUIRE(some_floats == dataFrame.getColumn<double>("some_float").data());
+}
+
+// Column test cases
+
+TEST_CASE("Column.mean() returns correct value", "[Column.mean()]") {
+    std::vector<long> nums = {10, 15, 12, 13, 9, 16};
+    double mean = 12.5;
+    Column<long> nums_column = Column<long>(nums);
+
+    REQUIRE(std::abs(mean - nums_column.mean()) < std::numeric_limits<double>::epsilon());
 }
 
 //TEST_CASE("DataFrame.getAllColumns returns correct value", "[getAllColumns]") {
