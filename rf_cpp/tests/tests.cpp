@@ -106,3 +106,13 @@ TEST_CASE("Column.min() and Column.max() return correct value for floats", "[Col
     REQUIRE(std::abs(min_val - nums_column.min()) < std::numeric_limits<double>::epsilon());
     REQUIRE(std::abs(max_val - nums_column.max()) < std::numeric_limits<double>::epsilon());
 }
+
+TEST_CASE("Column.min() and Column.max() return correct value for strings", "[Column.min(), Column.max()]") {
+    std::vector<std::string> names = {"Patrycja", "Adam", "Bartłomiej", "Zofia", "Czesław"};
+    std::string min_val = "Adam";
+    std::string max_val = "Zofia";
+    Column<std::string> names_column = Column<std::string>(names);
+
+    REQUIRE(min_val == names_column.min());
+    REQUIRE(max_val == names_column.max());
+}
