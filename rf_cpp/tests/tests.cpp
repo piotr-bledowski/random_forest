@@ -4,7 +4,7 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "../dataFrame.h"
-#include <limits> // standard-defined value of epsilon
+#include <limits> // standard-defined value of epsilon for float comparisons
 
 // DataFrame test cases
 
@@ -71,6 +71,58 @@ TEST_CASE("Column.mean() returns correct value for floats", "[Column.mean()]") {
     REQUIRE(std::abs(mean - nums_column.mean()) < std::numeric_limits<double>::epsilon());
 }
 
-//TEST_CASE("DataFrame.getAllColumns returns correct value", "[getAllColumns]") {
-//
-//}
+TEST_CASE("Column.median() returns correct value for integers and odd length", "[Column.median()]") {
+    std::vector<long> nums = {345, 23, 76, 6, 9, 96, 123, 666, 777};
+    double median = 96.0;
+    Column<long> nums_column = Column<long>(nums);
+
+    REQUIRE(median == nums_column.median());
+}
+
+TEST_CASE("Column.median() returns correct value for floats and even length", "[Column.median()]") {
+    std::vector<double> nums = {65.34, 45.4, 76.15, 6.6, 9999.99324, 96.43, 123.123, 777.0};
+    double median = 86.29;
+    Column<double> nums_column = Column<double>(nums);
+
+    REQUIRE(std::abs(median - nums_column.median()) < std::numeric_limits<double>::epsilon());
+}
+
+TEST_CASE("Column.min() and Column.max() return correct value for integers", "[Column.min(), Column.max()]") {
+    std::vector<long> nums = {5, 2, 567, 345, 34, 76, 234, 65, 94, 27, 34578, 835, 74923467};
+    long min_val = 2;
+    long max_val = 74923467;
+    Column<long> nums_column = Column<long>(nums);
+
+    REQUIRE(min_val == nums_column.min());
+    REQUIRE(max_val == nums_column.max());
+}
+
+TEST_CASE("Column.min() and Column.max() return correct value for floats", "[Column.min(), Column.max()]") {
+    std::vector<double> nums = {5.6, 2.3, 9.21, 7.2};
+    double min_val = 2.3;
+    double max_val = 9.21;
+    Column<double> nums_column = Column<double>(nums);
+
+    REQUIRE(std::abs(min_val - nums_column.min()) < std::numeric_limits<double>::epsilon());
+    REQUIRE(std::abs(max_val - nums_column.max()) < std::numeric_limits<double>::epsilon());
+}
+
+TEST_CASE("Column.min() and Column.max() return correct value for strings", "[Column.min(), Column.max()]") {
+    std::vector<std::string> names = {"Patrycja", "Adam", "Bartłomiej", "Zofia", "Czesław"};
+    std::string min_val = "Adam";
+    std::string max_val = "Zofia";
+    Column<std::string> names_column = Column<std::string>(names);
+
+    REQUIRE(min_val == names_column.min());
+    REQUIRE(max_val == names_column.max());
+}
+
+TEST_CASE("Column.getRows() returns correct value", "[Column.getRows()]") {
+    std::vector<long> nums = {5, 3, 6, 7, 4, 6, 8, 3, 5, 7};
+    std::vector<size_t> indeces = {2, 4, 9};
+    std::vector<long> expected_nums = {6, 4, 7};
+    Column<long> nums_column = Column<long>(nums);
+
+    REQUIRE(expected_nums == nums_column.getRows(indeces).data());
+}
+

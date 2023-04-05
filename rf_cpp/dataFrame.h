@@ -22,13 +22,13 @@ private:
     std::map<std::string, column_t> columns_;
 
 public:
-    DataFrame(std::vector<std::string> row_labels, std::vector<std::string> column_labels, std::vector<column_t> columns);
+    DataFrame(const std::vector<std::string>& row_labels, const std::vector<std::string>& column_labels, const std::vector<column_t>& columns);
 
     std::map<std::string, column_t> getAllColumns() const {
         return columns_;
     }
 
-    std::map<std::string, column_t> getColumns(std::vector<std::string> column_names) const;
+    std::map<std::string, column_t> getColumns(const std::vector<std::string>& column_names) const;
 
     template <typename T>
     Column<T> getColumn(const std::string& column_name) {
@@ -40,6 +40,14 @@ public:
 
         auto column_ptr = std::get<Column<T>*>(it->second);
         return *column_ptr;
+    }
+
+    DataFrame sub(const std::vector<size_t>& row_indeces, const std::vector<std::string>& columns) {
+
+    }
+
+    DataFrame sub(const std::vector<std::string>& rows, const std::vector<std::string>& columns) {
+
     }
 
     bool containsColumn(const std::string& col) {

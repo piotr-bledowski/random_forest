@@ -5,7 +5,7 @@
 #include "rapidcsv.h"
 #include "utils/vectorUtils.h"
 
-DataFrame::DataFrame(std::vector<std::string> row_labels, std::vector<std::string> column_names, std::vector<column_t> columns) {
+DataFrame::DataFrame(const std::vector<std::string>& row_labels, const std::vector<std::string>& column_names, const std::vector<column_t>& columns) {
     row_labels_ = row_labels;
     for (int i = 0; i < column_names.size(); i++) {
         columns_[column_names[i]] = columns[i];
