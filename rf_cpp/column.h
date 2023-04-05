@@ -22,7 +22,7 @@ private:
     std::vector<T> cells_;
     std::vector<T> sorted_cells_;
 public:
-    Column(std::vector<T> col_data) {
+    explicit Column(const std::vector<T>& col_data) {
         cells_ = col_data;
         sorted_cells_ = cells_;
         std::sort(sorted_cells_.begin(), sorted_cells_.end());
