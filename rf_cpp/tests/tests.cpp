@@ -3,7 +3,7 @@
 //
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-#include "../dataFrame.h"
+#include "../dataFrame/dataFrame.h"
 #include <limits> // standard-defined value of epsilon for float comparisons
 
 // DataFrame test cases
@@ -52,6 +52,27 @@ TEST_CASE("DataFrame.containsColumn returns correct value", "[containsColumn]") 
     REQUIRE(dataFrame.containsColumn("some_float") == true);
     REQUIRE(dataFrame.containsColumn("some_non-existent_column") == false);
 }
+
+//TEST_CASE("DataFrame label getters return correct values", "[DataFrame getters]") {
+//    std::vector<std::string> names = {"John", "Jane", "Josh"};
+//    Column<std::string> names_column = Column<std::string>(names);
+//    column_t col1 = &names_column;
+//    std::vector<long> ages = {34, 35, 20};
+//    Column<long> age_column = Column<long>(ages);
+//    column_t col2 = &age_column;
+//    std::vector<double> some_floats = {4.5, 5.0, 3.5};
+//    Column<double> some_floats_column = Column<double>(some_floats);
+//    column_t col3 = &some_floats_column;
+//
+//    std::vector<std::string> row_labels = {"1", "2", "3"};
+//    std::vector<std::string> column_labels = {"name", "age", "some_float"};
+//    std::vector<column_t> columns = {&names_column, &age_column, &some_floats_column};
+//
+//    DataFrame dataFrame = DataFrame(row_labels, column_labels, columns);
+//
+//    REQUIRE(row_labels == dataFrame.getRowLabels());
+//    REQUIRE(column_labels == dataFrame.getColumnLabels());
+//}
 
 // Column test cases
 
@@ -126,3 +147,8 @@ TEST_CASE("Column.getRows() returns correct value", "[Column.getRows()]") {
     REQUIRE(expected_nums == nums_column.getRows(indeces).data());
 }
 
+// Information tests
+
+TEST_CASE("entropy() returns correct value", "[entropy()]") {
+
+}
