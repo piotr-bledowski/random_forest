@@ -5,6 +5,7 @@
 #include "catch.hpp"
 #include "../dataFrame/dataFrame.h"
 #include <limits> // standard-defined value of epsilon for float comparisons
+#include "../utils/informationUtils.h"
 
 // DataFrame test cases
 
@@ -150,5 +151,7 @@ TEST_CASE("Column.getRows() returns correct value", "[Column.getRows()]") {
 // Information tests
 
 TEST_CASE("entropy() returns correct value", "[entropy()]") {
-
+    std::vector<double> data = {1.0, 1.0, 2.0, 1.0, 2.0, 2.0};
+    double expected_entropy = 1.0;
+    REQUIRE(std::abs(entropy(data) - expected_entropy) < std::numeric_limits<double>::epsilon());
 }

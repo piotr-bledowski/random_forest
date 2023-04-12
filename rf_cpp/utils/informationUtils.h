@@ -34,11 +34,11 @@ double entropy(const std::vector<T>& data) {
     while(it != proportions.end()) {
         // proportion calculation
         it->second /= (double) data.size();
-        it++;
         // calculating entropies
         entropies.push_back(it->second * std::log2(it->second));
+        it++;
     }
 
     // sum of these values is the entropy of given data
-    return std::accumulate(entropies.begin(), entropies.end(), 0.0);
+    return -std::accumulate(entropies.begin(), entropies.end(), 0.0);
 }
