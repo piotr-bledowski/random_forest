@@ -11,7 +11,6 @@ DataFrame::DataFrame(const std::vector<std::string>& row_labels, const std::vect
     }
 }
 
-
 //std::vector<column_t> DataFrame::getColumns(std::vector<std::string> column_names) const {
 //    std::vector<column_t> columns;
 //    for (column_t col : columns_) {

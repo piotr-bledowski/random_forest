@@ -9,12 +9,12 @@
 
 #include "../rapidcsv.h"
 #include <vector>
-#include "column.h"
+#include "numericColumn.h"
 #include <variant>
 #include <unordered_map>
 
 // using std::variant here to ensure flexibility (basically the columns vector may store Columns of multiple data types)
-using column_t = std::variant<Column<long>*, Column<double>*, Column<std::string>*, Column<bool>*>;
+using column_t = std::variant<FloatNumericColumn*, IntNumericColumn*, Column<std::string>*, Column<bool>*>;
 
 class DataFrame {
 private:
@@ -30,16 +30,14 @@ public:
 
     std::unordered_map<std::string, column_t> getColumns(const std::vector<std::string>& column_names) const;
 
-    template <typename T>
-    Column<T> getColumn(const std::string& column_name) {
+    column_t getColumn(const std::string& column_name) {
         auto it = columns_.find(column_name);
 
         //! if column_name not in keys
         if (it == columns_.end())
             throw std::runtime_error("Column not in dataFrame!");
 
-        auto column_ptr = std::get<Column<T>*>(it->second);
-        return *column_ptr;
+        return it->second;
     }
 
     DataFrame sub(const std::vector<size_t>& row_indeces, const std::vector<std::string>& columns) {
