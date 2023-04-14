@@ -148,6 +148,20 @@ TEST_CASE("Column.getRows() returns correct value", "[Column.getRows()]") {
     REQUIRE(expected_nums == nums_column.getRows(indeces).data());
 }
 
+TEST_CASE("NumericColumn.sum() returns correct value for ints", "[NumericColumn.sum()]") {
+    std::vector<long> nums = {3, 4, 5, 6, 7};
+    IntNumericColumn nums_column = IntNumericColumn(nums);
+    long expected_sum = 25;
+    REQUIRE(expected_sum == nums_column.sum());
+}
+
+TEST_CASE("NumericColumn.sum() returns correct value for floats", "[NumericColumn.sum()]") {
+    std::vector<double> nums = {1.5, 2.5, 0.9, 3.1};
+    FloatNumericColumn nums_column = FloatNumericColumn(nums);
+    double expected_sum = 8.0;
+    REQUIRE(std::abs(expected_sum - nums_column.sum()) < std::numeric_limits<double>::epsilon());
+}
+
 // Information tests
 
 TEST_CASE("entropy() returns correct value", "[entropy()]") {

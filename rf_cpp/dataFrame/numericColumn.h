@@ -16,6 +16,8 @@ public:
     double mean();
 
     double median();
+
+    double sum();
 };
 
 class IntNumericColumn : public Column<long> {
@@ -25,4 +27,6 @@ public:
     double mean();
 
     double median();
+
+    long sum();
 };
