@@ -30,6 +30,10 @@ public:
         return cells_;
     }
 
+    std::vector<size_t> indices_where(bool (*expression_func_ptr)(T x, T y)) {
+
+    }
+
 //    double mean() {
 //        if (std::is_same<T, long>::value) {
 //            std::vector<double> double_cells(cells_.begin(), cells_.end());

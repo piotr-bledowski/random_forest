@@ -27,8 +27,6 @@ public:
         return columns_;
     }
 
-
-
     std::unordered_map<std::string, column_t> getColumns(const std::vector<std::string>& column_names) const;
 
     column_t getColumn(const std::string& column_name) {
@@ -41,7 +39,9 @@ public:
         return it->second;
     }
 
-    std::vector<size_t> indeces_where(bool (*expression_func_ptr)())
+    std::vector<size_t> indices_where(bool (*expression_func_ptr)(long x, long y));
+
+    std::vector<size_t> indices_where(bool (*expression_func_ptr)(double x, double y));
 
     DataFrame sub(const std::vector<size_t>& row_indices, const std::vector<std::string>& columns);
 

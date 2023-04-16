@@ -7,42 +7,27 @@
 
 #endif //RF_CPP_EXPRESSIONS_H
 
-bool greater_than(long x, long y) {
+template <typename T>
+bool greater_than(T x, T y) {
     return x > y;
 }
 
-bool less_than(long x, long y) {
+template <typename T>
+bool less_than(T x, T y) {
     return x < y;
 }
 
-bool greater_equal(long x, long y) {
+template <typename T>
+bool greater_equal(T x, T y) {
     return x >= y;
 }
 
-bool less_equal(long x, long y) {
+template <typename T>
+bool less_equal(T x, T y) {
     return x <= y;
 }
 
-bool equal_to(long x, long y) {
-    return x == y;
-}
-
-bool greater_than(double x, double y) {
-    return x > y;
-}
-
-bool less_than(double x, double y) {
-    return x < y;
-}
-
-bool greater_equal(double x, double y) {
-    return x >= y;
-}
-
-bool less_equal(double x, double y) {
-    return x <= y;
-}
-
-bool equal_to(double x, double y) {
+template <typename T>
+bool equal_to(T x, T y) {
     return x == y;
 }
