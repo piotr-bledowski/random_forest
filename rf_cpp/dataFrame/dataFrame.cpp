@@ -11,11 +11,11 @@ DataFrame::DataFrame(const std::vector<std::string>& row_labels, const std::vect
     }
 }
 
-DataFrame DataFrame::sub(const std::vector<size_t>& row_indeces, const std::vector<std::string>& columns) {
+DataFrame DataFrame::sub(const std::vector<size_t>& row_indices, const std::vector<std::string>& columns) {
     std::vector<std::string> new_row_labels;
     std::vector<column_t> new_columns;
 
-    for (size_t i : row_indeces) {
+    for (size_t i : row_indices) {
         new_row_labels.push_back(row_labels_[i]);
     }
 

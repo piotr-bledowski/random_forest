@@ -20,13 +20,14 @@ class DataFrame {
 private:
     std::vector<std::string> row_labels_;
     std::unordered_map<std::string, column_t> columns_;
-
 public:
     DataFrame(const std::vector<std::string>& row_labels, const std::vector<std::string>& column_labels, const std::vector<column_t>& columns);
 
     std::unordered_map<std::string, column_t> getAllColumns() const {
         return columns_;
     }
+
+
 
     std::unordered_map<std::string, column_t> getColumns(const std::vector<std::string>& column_names) const;
 
@@ -40,7 +41,9 @@ public:
         return it->second;
     }
 
-    DataFrame sub(const std::vector<size_t>& row_indeces, const std::vector<std::string>& columns);
+    std::vector<size_t> indeces_where(bool (*expression_func_ptr)())
+
+    DataFrame sub(const std::vector<size_t>& row_indices, const std::vector<std::string>& columns);
 
     DataFrame sub(const std::vector<std::string>& row_labels, const std::vector<std::string>& columns);
 

@@ -141,11 +141,11 @@ TEST_CASE("Column.min() and Column.max() return correct value for strings", "[Co
 
 TEST_CASE("Column.getRows() returns correct value", "[Column.getRows()]") {
     std::vector<long> nums = {5, 3, 6, 7, 4, 6, 8, 3, 5, 7};
-    std::vector<size_t> indeces = {2, 4, 9};
+    std::vector<size_t> indices = {2, 4, 9};
     std::vector<long> expected_nums = {6, 4, 7};
     IntNumericColumn nums_column = IntNumericColumn(nums);
 
-    REQUIRE(expected_nums == nums_column.getRows(indeces).data());
+    REQUIRE(expected_nums == nums_column.getRows(indices).data());
 }
 
 TEST_CASE("NumericColumn.sum() returns correct value for ints", "[NumericColumn.sum()]") {
