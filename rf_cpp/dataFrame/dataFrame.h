@@ -40,13 +40,9 @@ public:
         return it->second;
     }
 
-    DataFrame sub(const std::vector<size_t>& row_indeces, const std::vector<std::string>& columns) {
+    DataFrame sub(const std::vector<size_t>& row_indeces, const std::vector<std::string>& columns);
 
-    }
-
-    DataFrame sub(const std::vector<std::string>& rows, const std::vector<std::string>& columns) {
-
-    }
+    DataFrame sub(const std::vector<std::string>& row_labels, const std::vector<std::string>& columns);
 
     std::vector<std::string> getRowLabels() {
         return row_labels_;

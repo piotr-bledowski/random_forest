@@ -11,6 +11,21 @@ DataFrame::DataFrame(const std::vector<std::string>& row_labels, const std::vect
     }
 }
 
+DataFrame DataFrame::sub(const std::vector<size_t>& row_indeces, const std::vector<std::string>& columns) {
+    std::vector<std::string> new_row_labels;
+    std::vector<column_t> new_columns;
+
+    for (size_t i : row_indeces) {
+        new_row_labels.push_back(row_labels_[i]);
+    }
+
+    for (const std::string& column_name : columns) {
+        new_columns.push_back(getColumn(column_name));
+    }
+
+    return DataFrame(new_row_labels, columns, new_columns);
+}
+
 //std::vector<column_t> DataFrame::getColumns(std::vector<std::string> column_names) const {
 //    std::vector<column_t> columns;
 //    for (column_t col : columns_) {

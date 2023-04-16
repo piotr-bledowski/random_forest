@@ -42,3 +42,8 @@ double entropy(const std::vector<T>& data) {
     // sum of these values is the entropy of given data
     return -std::accumulate(entropies.begin(), entropies.end(), 0.0);
 }
+
+// Returns a pair of lists of indeces (first - left, second - right)
+std::pair<std::vector<size_t>, std::vector<size_t>> createSplit() {
+
+}

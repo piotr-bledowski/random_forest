@@ -6,3 +6,7 @@
 #define RF_CPP_DECISIONTREE_H
 
 #endif //RF_CPP_DECISIONTREE_H
+
+class DecisionTree {
+
+};
