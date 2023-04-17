@@ -30,8 +30,16 @@ public:
         return cells_;
     }
 
-    std::vector<size_t> indices_where(bool (*expression_func_ptr)(T x, T y)) {
+    std::vector<size_t> indicesWhere(bool (*expression_func_ptr)(T x, T y), const T& threshold) {
+        std::vector<size_t> indices;
 
+        for (size_t i = 0; i < cells_.size(); i++) {
+            if ((*expression_func_ptr)(cells_[i], threshold)) {
+                indices.push_back(i);
+            }
+        }
+
+        return indices;
     }
 
 //    double mean() {

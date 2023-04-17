@@ -7,6 +7,16 @@
 
 #endif //RF_CPP_DECISIONTREE_H
 
-class DecisionTree {
+#include <vector>
+#include "../dataFrame/dataFrame.h"
+#include "../utils/informationUtils.h"
 
+class DecisionTree {
+private:
+    DataFrame data_;
+public:
+    // Returns a pair of lists of indeces (first - left, second - right)
+    std::pair<std::vector<size_t>, std::vector<size_t>> createSplit() {
+
+    }
 };

@@ -5,7 +5,8 @@
 #include "catch.hpp"
 #include "../dataFrame/dataFrame.h"
 #include <limits> // standard-defined value of epsilon for float comparisons
-#include "../utils/informationUtils.h"
+#include "../utils/expressions.h"
+#include "../model/decisionTree.h"
 
 // DataFrame test cases
 
@@ -160,6 +161,33 @@ TEST_CASE("NumericColumn.sum() returns correct value for floats", "[NumericColum
     FloatNumericColumn nums_column = FloatNumericColumn(nums);
     double expected_sum = 8.0;
     REQUIRE(std::abs(expected_sum - nums_column.sum()) < std::numeric_limits<double>::epsilon());
+}
+
+TEST_CASE("Column.indicesWhere() returns correct value for booleans", "[Column.indicesWhere()]") {
+    std::vector<bool> vals = {0, 1, 0, 0, 1};
+    Column<bool> col = Column<bool>(vals);
+
+    std::vector<size_t> expected = {1, 4};
+
+    REQUIRE(col.indicesWhere(&equal_to, true) == expected);
+}
+
+TEST_CASE("Column.indicesWhere() returns correct value for ints", "[Column.indicesWhere()]") {
+    std::vector<long> vals = {5, 3, 9, 124, 0, 53};
+    IntNumericColumn col = IntNumericColumn(vals);
+
+    std::vector<size_t> expected = {0, 1, 4};
+
+    REQUIRE(col.indicesWhere(&less_equal, 5) == expected);
+}
+
+TEST_CASE("Column.indicesWhere() returns correct value for floats", "[Column.indicesWhere()]") {
+    std::vector<double> vals = {5.5, 3.5, 8.75, 64.774, 0.13};
+    FloatNumericColumn col = FloatNumericColumn(vals);
+
+    std::vector<size_t> expected = {2, 3};
+
+    REQUIRE(col.indicesWhere(&greater_than, 7.6) == expected);
 }
 
 // Information tests
