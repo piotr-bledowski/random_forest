@@ -3,9 +3,7 @@
 //
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-#include "../dataFrame/dataFrame.h"
 #include <limits> // standard-defined value of epsilon for float comparisons
-#include "../utils/expressions.h"
 #include "../model/decisionTree.h"
 
 // DataFrame test cases
