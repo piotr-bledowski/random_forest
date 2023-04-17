@@ -6,7 +6,7 @@
 #include <limits> // standard-defined value of epsilon for float comparisons
 #include "../model/decisionTree.h"
 
-// DataFrame test cases
+// DataFrame tests
 
 TEST_CASE("DataFrame.getColumn returns correct value", "[getColumn]") {
     std::vector<std::string> names = {"John", "Jane", "Josh"};
@@ -74,7 +74,7 @@ TEST_CASE("DataFrame.containsColumn returns correct value", "[containsColumn]") 
 //    REQUIRE(column_labels == dataFrame.getColumnLabels());
 //}
 
-// Column test cases
+// Column tests
 
 TEST_CASE("Column.mean() returns correct value for integers", "[Column.mean()]") {
     std::vector<long> nums = {10, 15, 12, 13, 9, 16};
@@ -188,10 +188,36 @@ TEST_CASE("Column.indicesWhere() returns correct value for floats", "[Column.ind
     REQUIRE(col.indicesWhere(&greater_than, 7.6) == expected);
 }
 
-// Information tests
+// Information utils tests
 
 TEST_CASE("entropy() returns correct value", "[entropy()]") {
     std::vector<double> data = {1.0, 1.0, 2.0, 1.0, 2.0, 2.0};
     double expected_entropy = 1.0;
     REQUIRE(std::abs(entropy(data) - expected_entropy) < std::numeric_limits<double>::epsilon());
+}
+
+// Node tests
+
+TEST_CASE("Split (non-leaf) node works as expected", "[Node]") {
+    std::string feature = "some_feature";
+    double threshold = 4.5;
+    Node node = Node<double>(feature, &threshold, nullptr, nullptr);
+
+    REQUIRE(node.feature() == feature);
+    REQUIRE(node.threshold() == threshold);
+    REQUIRE(node.left() == nullptr);
+    REQUIRE(node.right() == nullptr);
+    REQUIRE(node.isLeaf() == false);
+}
+
+TEST_CASE("Leaf node works as expected", "[Node]") {
+    std::string feature = "some_feature";
+    std::string val = "category";
+    Node<std::string> node = Node<std::string>(feature, nullptr, nullptr, nullptr, &val);
+
+    REQUIRE(node.feature() == feature);
+    REQUIRE(node.left() == nullptr);
+    REQUIRE(node.right() == nullptr);
+    REQUIRE(node.value() == val);
+    REQUIRE(node.isLeaf() == true);
 }

@@ -8,111 +8,128 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug"/>
+				<Option working_dir="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rf_cpp">
-				<Option output="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/rf_cpp" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug"/>
+				<Option output="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/rf_cpp.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="/mingw/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rf_cpp"/>
-					<CompileFile command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rf_cpp"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rf_cpp/fast">
-				<Option output="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/rf_cpp" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug"/>
+				<Option output="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/rf_cpp.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="/mingw/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rf_cpp/fast"/>
-					<CompileFile command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rf_cpp/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug"/>
+				<Option working_dir="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug"/>
+				<Option working_dir="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j6 -f &quot;/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/column.cpp">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/column.cpp">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/column.h">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/column.h">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/dataFrame.cpp">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/dataFrame.cpp">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/dataFrame.h">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/dataFrame.h">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/main.cpp">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/numericColumn.cpp">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/rapidcsv.h">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/numericColumn.h">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/tests/catch.hpp">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/main.cpp">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/tests/tests.cpp">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/model/decisionTree.cpp">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/utils/vectorUtils.cpp">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/model/decisionTree.h">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/utils/vectorUtils.h">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/model/node.h">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="/home/piotr/Desktop/random_forest_project/random_forest/rf_cpp/CMakeLists.txt">
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/rapidcsv.h">
+			<Option target="rf_cpp"/>
+		</Unit>
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/tests/catch.hpp">
+			<Option target="rf_cpp"/>
+		</Unit>
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/tests/tests.cpp">
+			<Option target="rf_cpp"/>
+		</Unit>
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/utils/expressions.h">
+			<Option target="rf_cpp"/>
+		</Unit>
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/utils/informationUtils.h">
+			<Option target="rf_cpp"/>
+		</Unit>
+		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

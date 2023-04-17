@@ -11,6 +11,7 @@
 #include "../dataFrame/dataFrame.h"
 #include "../utils/informationUtils.h"
 #include "../utils/expressions.h"
+#include "node.h"
 
 class DecisionTree {
 private:
