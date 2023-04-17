@@ -13,15 +13,38 @@
 #include "../utils/expressions.h"
 #include "node.h"
 
+using split_indices = std::pair<std::vector<size_t>, std::vector<size_t>>;
+
 class DecisionTree {
 private:
     DataFrame data_;
 public:
     // Returns a pair of lists of indices (first - left, second - right)
     template <typename T>
-    std::pair<std::vector<size_t>, std::vector<size_t>> createSplit(std::string feature, T threshold) {
+    split_indices createSplit(std::string feature, T threshold) {
         std::vector<size_t> left_indices = std::get<T>(data_.getColumn(feature))->indicesWhere(&less_equal, threshold);
         std::vector<size_t> right_indices = std::get<T>(data_.getColumn(feature))->indicesWhere(&greater_than, threshold);
-        return std::pair<std::vector<size_t>, std::vector<size_t>>(left_indices, right_indices);
+        return split_indices(left_indices, right_indices);
+    }
+
+    template <typename feature_T, typename target_T>
+    double informationGain(std::string feature, std::string target, feature_T threshold) {
+        std::vector<target_T> parent = std::get<target_T>(data_.getColumn(target));
+        double parent_entropy = entropy<target_T>(parent->data());
+
+        split_indices children = createSplit<feature_T>(feature, threshold);
+        std::vector<size_t> left_indices = children.first;
+        std::vector<size_t> right_indices = children.second;
+
+        if (left_indices.empty() || right_indices.empty())
+            return 0.0;
+
+        auto n = (double) parent->data().size();
+        auto left_n = (double) left_indices.size();
+        auto right_n = (double) right_indices.size();
+
+        double child_entropy = left_n / n * entropy(parent->getRows(left_indices)) + right_n / n * entropy(parent->getRows(right_indices));
+
+        return parent_entropy - child_entropy;
     }
 };

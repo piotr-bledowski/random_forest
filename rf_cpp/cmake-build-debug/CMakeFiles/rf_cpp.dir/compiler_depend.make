@@ -1283,7 +1283,8 @@ CMakeFiles/rf_cpp.dir/tests/tests.cpp.obj: C:/Users/piotr/OneDrive/Pulpit/rf_pro
   C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/column.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/variant \
   C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/utils/informationUtils.h \
-  C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/utils/expressions.h
+  C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/utils/expressions.h \
+  C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/model/node.h
 
 
 C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/typeinfo:
@@ -1575,6 +1576,8 @@ C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32
 C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/x86_64-w64-mingw32/include/pthread.h:
+
+C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/model/node.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/x86_64-w64-mingw32/include/stddef.h:
 
