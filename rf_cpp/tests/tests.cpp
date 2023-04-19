@@ -247,7 +247,6 @@ TEST_CASE("createSplit() returns correct values", "[DecisionTree.createSplit()]"
     DecisionTree tree = DecisionTree(data);
 
     // actual test
-
     std::vector<size_t> expected_right = {0, 1, 2};
     std::vector<size_t> expected_left = {3, 4};
 
@@ -255,4 +254,32 @@ TEST_CASE("createSplit() returns correct values", "[DecisionTree.createSplit()]"
 
     REQUIRE(split.first == expected_left);
     REQUIRE(split.second == expected_right);
+}
+
+TEST_CASE("InformationGain() returns correct value", "[DecisionTree.informationGain()]") {
+    // Initializing the dataFrame
+    std::vector<std::string> names = {"John", "Jane", "Josh", "Jonathan", "Jolene", "Joseph", "Josuke", "Jotaro", "Jada", "Jessica"};
+    Column<std::string> names_column = Column<std::string>(names);
+    column_t col1 = &names_column;
+    std::vector<long> ages = {44, 35, 20, 56, 12, 76, 56, 42, 98, 84};
+    Column<long> age_column = Column<long>(ages);
+    column_t col2 = &age_column;
+    std::vector<bool> high_heart_attack_risk = {1, 0, 0, 0, 0, 1, 1, 0, 1, 1};
+    Column<bool> bool_column = Column<bool>(high_heart_attack_risk);
+    column_t col3 = &bool_column;
+
+    std::vector<std::string> row_labels = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    std::vector<std::string> column_labels = {"name", "age", "high_heart_attack_risk"};
+    std::vector<column_t> columns = {&names_column, &age_column, &bool_column};
+
+    DataFrame data = DataFrame(row_labels, column_labels, columns);
+
+    DecisionTree tree = DecisionTree(data);
+
+    // actual test
+    double ig = 0.395;
+
+    double tree_ig = tree.informationGain<long, bool>("age", "high_heart_attack_risk", 40);
+
+    REQUIRE(std::abs(ig - tree_ig) < 0.001);
 }

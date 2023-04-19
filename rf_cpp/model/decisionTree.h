@@ -36,7 +36,7 @@ public:
 
     template <typename feature_T, typename target_T>
     double informationGain(std::string feature, std::string target, feature_T threshold) {
-        std::vector<target_T> parent = std::get<target_T>(data_.getColumn(target));
+        Column<target_T>* parent = std::get<Column<target_T>*>(data_.getColumn(target));
         double parent_entropy = entropy<target_T>(parent->data());
 
         split_indices children = createSplit<feature_T>(feature, threshold);
@@ -50,7 +50,7 @@ public:
         auto left_n = (double) left_indices.size();
         auto right_n = (double) right_indices.size();
 
-        double child_entropy = left_n / n * entropy(parent->getRows(left_indices)) + right_n / n * entropy(parent->getRows(right_indices));
+        double child_entropy = left_n / n * entropy(parent->getRows(left_indices).data()) + right_n / n * entropy(parent->getRows(right_indices).data());
 
         return parent_entropy - child_entropy;
     }
