@@ -29,8 +29,8 @@ public:
     // Returns a pair of lists of indices (first - left, second - right)
     template <typename T>
     split_indices createSplit(std::string feature, T threshold) {
-        std::vector<size_t> left_indices = std::get<T>(data_.getColumn(feature))->indicesWhere(&less_equal, threshold);
-        std::vector<size_t> right_indices = std::get<T>(data_.getColumn(feature))->indicesWhere(&greater_than, threshold);
+        std::vector<size_t> left_indices = std::get<Column<T>*>(data_.getColumn(feature))->indicesWhere(&less_equal, threshold);
+        std::vector<size_t> right_indices = std::get<Column<T>*>(data_.getColumn(feature))->indicesWhere(&greater_than, threshold);
         return split_indices(left_indices, right_indices);
     }
 

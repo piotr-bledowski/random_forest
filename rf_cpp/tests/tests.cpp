@@ -6,23 +6,6 @@
 #include <limits> // standard-defined value of epsilon for float comparisons
 #include "../model/decisionTree.h"
 
-DataFrame exampleDataFrame() {
-    std::vector<std::string> names = {"John", "Jane", "Josh", "Jonathan", "Jolene"};
-    Column<std::string> names_column = Column<std::string>(names);
-    column_t col1 = &names_column;
-    std::vector<long> ages = {34, 35, 20, 15, 12};
-    Column<long> age_column = Column<long>(ages);
-    column_t col2 = &age_column;
-    std::vector<double> some_floats = {4.5, 5.0, 3.5, 2.0, 7.7};
-    Column<double> some_floats_column = Column<double>(some_floats);
-    column_t col3 = &some_floats_column;
-
-    std::vector<std::string> row_labels = {"1", "2", "3"};
-    std::vector<std::string> column_labels = {"name", "age", "some_float"};
-    std::vector<column_t> columns = {&names_column, &age_column, &some_floats_column};
-
-    return DataFrame(row_labels, column_labels, columns);
-}
 
 // DataFrame tests
 
@@ -243,13 +226,33 @@ TEST_CASE("Leaf node works as expected", "[Node]") {
 
 // Decision Tree tests
 
-//TEST_CASE("createSplit() returns correct values", "[DecisionTree.createSplit()]") {
-//    DataFrame data = exampleDataFrame();
-//
-//    DecisionTree tree = DecisionTree(data);
-//
-//    std::vector<size_t> expected_left = {0, 1, 2};
-//    std::vector<size_t> expected_right = {3, 4};
-//
-//    split_indices split = tree.createSplit<long>("age", 18);
-//}
+TEST_CASE("createSplit() returns correct values", "[DecisionTree.createSplit()]") {
+    // Initializing the dataFrame
+    std::vector<std::string> names = {"John", "Jane", "Josh", "Jonathan", "Jolene"};
+    Column<std::string> names_column = Column<std::string>(names);
+    column_t col1 = &names_column;
+    std::vector<long> ages = {34, 35, 20, 15, 12};
+    Column<long> age_column = Column<long>(ages);
+    column_t col2 = &age_column;
+    std::vector<double> some_floats = {4.5, 5.0, 3.5, 2.0, 7.7};
+    Column<double> some_floats_column = Column<double>(some_floats);
+    column_t col3 = &some_floats_column;
+
+    std::vector<std::string> row_labels = {"1", "2", "3"};
+    std::vector<std::string> column_labels = {"name", "age", "some_float"};
+    std::vector<column_t> columns = {&names_column, &age_column, &some_floats_column};
+
+    DataFrame data = DataFrame(row_labels, column_labels, columns);
+
+    DecisionTree tree = DecisionTree(data);
+
+    // actual test
+
+    std::vector<size_t> expected_right = {0, 1, 2};
+    std::vector<size_t> expected_left = {3, 4};
+
+    split_indices split = tree.createSplit<long>("age", 18);
+
+    REQUIRE(split.first == expected_left);
+    REQUIRE(split.second == expected_right);
+}

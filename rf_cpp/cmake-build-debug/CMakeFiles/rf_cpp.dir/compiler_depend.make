@@ -445,7 +445,6 @@ CMakeFiles/rf_cpp.dir/dataFrame/dataFrame.cpp.obj: C:/Users/piotr/OneDrive/Pulpi
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_tree.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_map.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_multimap.h \
-  C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/numericColumn.h \
   C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/column.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/variant \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/enable_special_members.h \
@@ -1279,7 +1278,6 @@ CMakeFiles/rf_cpp.dir/tests/tests.cpp.obj: C:/Users/piotr/OneDrive/Pulpit/rf_pro
   C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/model/decisionTree.h \
   C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/dataFrame.h \
   C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/rapidcsv.h \
-  C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/numericColumn.h \
   C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/column.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/variant \
   C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/utils/informationUtils.h \
@@ -1881,9 +1879,9 @@ C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/x86_64-w64-mingw32/include
 
 C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/dataFrame.cpp:
 
-C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/numericColumn.h:
-
 C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/numericColumn.cpp:
+
+C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/numericColumn.h:
 
 C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/main.cpp:
 
