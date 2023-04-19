@@ -9,12 +9,12 @@
 
 #include "../rapidcsv.h"
 #include <vector>
-#include "numericColumn.h"
+#include "column.h"
 #include <variant>
 #include <unordered_map>
 
 // using std::variant here to ensure flexibility (basically the columns vector may store Columns of multiple data types)
-using column_t = std::variant<FloatNumericColumn*, IntNumericColumn*, Column<std::string>*, Column<bool>*>;
+using column_t = std::variant<Column<double>*, Column<long>*, Column<std::string>*, Column<bool>*>;
 
 class DataFrame {
 private:
@@ -39,9 +39,9 @@ public:
         return it->second;
     }
 
-    std::vector<size_t> indices_where(bool (*expression_func_ptr)(long x, long y));
-
-    std::vector<size_t> indices_where(bool (*expression_func_ptr)(double x, double y));
+//    std::vector<size_t> indices_where(bool (*expression_func_ptr)(long x, long y));
+//
+//    std::vector<size_t> indices_where(bool (*expression_func_ptr)(double x, double y));
 
     DataFrame sub(const std::vector<size_t>& row_indices, const std::vector<std::string>& columns);
 

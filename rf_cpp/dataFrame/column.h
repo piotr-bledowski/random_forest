@@ -42,23 +42,31 @@ public:
         return indices;
     }
 
-//    double mean() {
-//        if (std::is_same<T, long>::value) {
-//            std::vector<double> double_cells(cells_.begin(), cells_.end());
-//            return std::accumulate(double_cells.begin(), double_cells.end(), 0.0) / (double) double_cells.size();
-//        }
-//
-//        //! IMPORTANT NOTE: The last argument of std::accumulate also specifies the return type!
-//        return std::accumulate(cells_.begin(), cells_.end(), 0.0) / (double) cells_.size();
-//    }
+    double mean() {
+        if (std::is_same<T, long>::value) {
+            std::vector<double> double_cells(cells_.begin(), cells_.end());
+            return std::accumulate(double_cells.begin(), double_cells.end(), 0.0) / (double) double_cells.size();
+        }
 
-//    double median() {
-//        if (std::is_same<T, std::string>::value || std::is_same<T, bool>::value)
-//            throw std::runtime_error("Cannot call mean() for non-numeric columns!");
-//        if (sorted_cells_.size() % 2 == 0)
-//            return (double) (sorted_cells_[sorted_cells_.size() / 2 - 1] + sorted_cells_[sorted_cells_.size() / 2]) / 2.0;
-//        return sorted_cells_[sorted_cells_.size() / 2];
-//    }
+        //! IMPORTANT NOTE: The last argument of std::accumulate also specifies the return type!
+        return std::accumulate(cells_.begin(), cells_.end(), 0.0) / (double) cells_.size();
+    }
+
+    double median() {
+        if (std::is_same<T, std::string>::value || std::is_same<T, bool>::value)
+            throw std::runtime_error("Cannot call mean() for non-numeric columns!");
+        if (sorted_cells_.size() % 2 == 0)
+            return (double) (sorted_cells_[sorted_cells_.size() / 2 - 1] + sorted_cells_[sorted_cells_.size() / 2]) / 2.0;
+        return sorted_cells_[sorted_cells_.size() / 2];
+    }
+
+    T sum() {
+        if (std::is_same<T, long>::value)
+            return std::accumulate(cells_.begin(), cells_.end(), 0);
+        if (std::is_same<T, double>::value)
+            return std::accumulate(cells_.begin(), cells_.end(), 0.0);
+        throw std::runtime_error("Cannot call sum() for non-numeric columns!");
+    }
 
     T max() {
         return sorted_cells_[sorted_cells_.size() - 1];

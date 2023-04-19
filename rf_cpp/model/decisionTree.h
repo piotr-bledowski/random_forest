@@ -18,7 +18,14 @@ using split_indices = std::pair<std::vector<size_t>, std::vector<size_t>>;
 class DecisionTree {
 private:
     DataFrame data_;
+    size_t max_depth_;
+    size_t min_samples_split_;
 public:
+    DecisionTree(DataFrame data, size_t max_depth = 100, size_t min_samples_split = 2) : data_(data) {
+        max_depth_ = max_depth;
+        min_samples_split_ = min_samples_split;
+    }
+
     // Returns a pair of lists of indices (first - left, second - right)
     template <typename T>
     split_indices createSplit(std::string feature, T threshold) {
