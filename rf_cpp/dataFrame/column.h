@@ -35,6 +35,8 @@ public:
         return std::set<T>(cells_.begin(), cells_.end()).size();
     }
 
+
+
     std::vector<size_t> indicesWhere(bool (*expression_func_ptr)(T x, T y), const T& threshold) {
         std::vector<size_t> indices;
 

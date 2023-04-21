@@ -23,8 +23,9 @@ TEST_CASE("DataFrame.getColumn returns correct value", "[getColumn]") {
     std::vector<std::string> row_labels = {"1", "2", "3"};
     std::vector<std::string> column_labels = {"name", "age", "some_float"};
     std::vector<column_t> columns = {&names_column, &age_column, &some_floats_column};
+    std::vector<std::type_index> types = {typeid(std::string), typeid(long), typeid(double)};
 
-    DataFrame dataFrame = DataFrame(row_labels, column_labels, columns);
+    DataFrame dataFrame = DataFrame(row_labels, column_labels, columns, types);
 
     REQUIRE(names == std::get<Column<std::string>*>(dataFrame.getColumn("name"))->data());
     REQUIRE(ages == std::get<Column<long>*>(dataFrame.getColumn("age"))->data());
@@ -45,8 +46,9 @@ TEST_CASE("DataFrame.containsColumn returns correct value", "[containsColumn]") 
     std::vector<std::string> row_labels = {"1", "2", "3"};
     std::vector<std::string> column_labels = {"name", "age", "some_float"};
     std::vector<column_t> columns = {&names_column, &age_column, &some_floats_column};
+    std::vector<std::type_index> types = {typeid(std::string), typeid(long), typeid(double)};
 
-    DataFrame dataFrame = DataFrame(row_labels, column_labels, columns);
+    DataFrame dataFrame = DataFrame(row_labels, column_labels, columns, types);
 
     REQUIRE(dataFrame.containsColumn("name") == true);
     REQUIRE(dataFrame.containsColumn("age") == true);
@@ -253,8 +255,9 @@ TEST_CASE("createSplit() returns correct values", "[DecisionTree.createSplit()]"
     std::vector<std::string> row_labels = {"1", "2", "3"};
     std::vector<std::string> column_labels = {"name", "age", "some_float"};
     std::vector<column_t> columns = {&names_column, &age_column, &some_floats_column};
+    std::vector<std::type_index> types = {typeid(std::string), typeid(long), typeid(double)};
 
-    DataFrame data = DataFrame(row_labels, column_labels, columns);
+    DataFrame data = DataFrame(row_labels, column_labels, columns, types);
 
     DecisionTree tree = DecisionTree(data);
 
@@ -283,8 +286,9 @@ TEST_CASE("InformationGain() returns correct value", "[DecisionTree.informationG
     std::vector<std::string> row_labels = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
     std::vector<std::string> column_labels = {"name", "age", "high_heart_attack_risk"};
     std::vector<column_t> columns = {&names_column, &age_column, &bool_column};
+    std::vector<std::type_index> types = {typeid(std::string), typeid(long), typeid(bool)};
 
-    DataFrame data = DataFrame(row_labels, column_labels, columns);
+    DataFrame data = DataFrame(row_labels, column_labels, columns, types);
 
     DecisionTree tree = DecisionTree(data);
 

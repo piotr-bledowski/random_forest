@@ -42,8 +42,17 @@ public:
     }
 
     // Returns a pair of feature and threshold
-    //template <typename T>
-    //std::pair<std::string, T> bestSplit()
+    template <typename target_T>
+    std::pair<std::string, target_T> bestSplit(std::vector<std::string> features, std::string target) {
+        double max_gain = -1.0;
+        std::string best_feature = "";
+        double best_threshold = 0.0;
+
+        for (std::string feature : features) {
+            column_t column = data_.getColumn(feature);
+            
+        }
+    }
 
     template <typename feature_T, typename target_T>
     double informationGain(std::string feature, std::string target, feature_T threshold) {

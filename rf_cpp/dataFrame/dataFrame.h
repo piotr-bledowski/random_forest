@@ -12,6 +12,7 @@
 #include "column.h"
 #include <variant>
 #include <unordered_map>
+#include <typeindex>
 
 // using std::variant here to ensure flexibility (basically the columns vector may store Columns of multiple data types)
 using column_t = std::variant<Column<double>*, Column<long>*, Column<std::string>*, Column<bool>*>;
@@ -19,15 +20,35 @@ using column_t = std::variant<Column<double>*, Column<long>*, Column<std::string
 class DataFrame {
 private:
     std::vector<std::string> row_labels_;
-    std::unordered_map<std::string, column_t> columns_;
+    std::map<std::string, std::type_index> types_;
+    std::map<std::string, column_t> columns_;
 public:
-    DataFrame(const std::vector<std::string>& row_labels, const std::vector<std::string>& column_labels, const std::vector<column_t>& columns);
+    DataFrame(const std::vector<std::string>& row_labels, const std::vector<std::string>& column_labels, const std::vector<column_t>& columns, std::vector<std::type_index> types);
 
-    std::unordered_map<std::string, column_t> getAllColumns() const {
-        return columns_;
+    std::vector<column_t> getAllColumns() const {
+        std::vector<column_t> r;
+
+        auto it = columns_.begin();
+
+        while (it != columns_.end()) {
+            r.push_back(it->second);
+            it++;
+        }
+
+        return r;
     }
 
-    std::unordered_map<std::string, column_t> getColumns(const std::vector<std::string>& column_names) const;
+    //std::unordered_map<std::string, column_t> getColumns(const std::vector<std::string>& column_names) const;
+
+    std::type_index getType(const std::string& column_name) {
+        auto it = types_.find(column_name);
+
+        //! if column_name not in keys
+        if (it == types_.end())
+            throw std::runtime_error("Column not in dataFrame!");
+
+        return it->second;
+    }
 
     column_t getColumn(const std::string& column_name) {
         auto it = columns_.find(column_name);
