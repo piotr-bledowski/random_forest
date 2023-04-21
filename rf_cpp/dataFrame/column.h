@@ -13,6 +13,7 @@
 #include <string>
 #include <variant>
 #include <numeric>
+#include <set>
 
 template <typename T>
 class Column {
@@ -28,6 +29,10 @@ public:
 
     std::vector<T> data() {
         return cells_;
+    }
+
+    size_t nUnique() {
+        return std::set<T>(cells_.begin(), cells_.end()).size();
     }
 
     std::vector<size_t> indicesWhere(bool (*expression_func_ptr)(T x, T y), const T& threshold) {

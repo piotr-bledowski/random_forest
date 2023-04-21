@@ -189,6 +189,17 @@ TEST_CASE("Column.indicesWhere() returns correct value for floats", "[Column.ind
     REQUIRE(col.indicesWhere(&greater_than, 7.6) == expected);
 }
 
+TEST_CASE("Column.nUnique() returns correct value", "[Column.nUnique()]") {
+    std::vector<bool> vals1 = {1, 0, 0, 1, 1};
+    Column<bool> col1 = Column<bool>(vals1);
+    std::vector<long> vals2 = {5, 5, 5};
+    Column<long> col2 = Column<long>(vals2);
+
+    REQUIRE(col1.nUnique() == 2);
+    REQUIRE(col2.nUnique() == 1);
+}
+
+
 // Information utils tests
 
 TEST_CASE("entropy() returns correct value", "[entropy()]") {
@@ -196,6 +207,7 @@ TEST_CASE("entropy() returns correct value", "[entropy()]") {
     double expected_entropy = 1.0;
     REQUIRE(std::abs(entropy(data) - expected_entropy) < std::numeric_limits<double>::epsilon());
 }
+
 
 // Node tests
 

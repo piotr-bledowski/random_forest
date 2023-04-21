@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/rf_cpp.dir/dataFrame/column.cpp.obj.d"
   "CMakeFiles/rf_cpp.dir/dataFrame/dataFrame.cpp.obj"
   "CMakeFiles/rf_cpp.dir/dataFrame/dataFrame.cpp.obj.d"
-  "CMakeFiles/rf_cpp.dir/dataFrame/numericColumn.cpp.obj"
-  "CMakeFiles/rf_cpp.dir/dataFrame/numericColumn.cpp.obj.d"
   "CMakeFiles/rf_cpp.dir/main.cpp.obj"
   "CMakeFiles/rf_cpp.dir/main.cpp.obj.d"
   "CMakeFiles/rf_cpp.dir/model/decisionTree.cpp.obj"

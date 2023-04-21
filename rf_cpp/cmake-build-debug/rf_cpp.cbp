@@ -96,12 +96,6 @@
 		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/dataFrame.h">
 			<Option target="rf_cpp"/>
 		</Unit>
-		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/numericColumn.cpp">
-			<Option target="rf_cpp"/>
-		</Unit>
-		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/dataFrame/numericColumn.h">
-			<Option target="rf_cpp"/>
-		</Unit>
 		<Unit filename="C:/Users/piotr/OneDrive/Pulpit/rf_project/random_forest/rf_cpp/main.cpp">
 			<Option target="rf_cpp"/>
 		</Unit>

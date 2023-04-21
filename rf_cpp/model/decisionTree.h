@@ -26,6 +26,13 @@ public:
         min_samples_split_ = min_samples_split;
     }
 
+    // Recursion depth limit. Also, tree is supposed to stop building when it reaches a set consisting of only 1 class
+    bool isFinished(size_t depth, size_t n_samples, size_t n_classes) {
+        if (depth >= max_depth_ || n_samples < min_samples_split_ || n_classes == 1)
+            return false;
+        return true;
+    }
+
     // Returns a pair of lists of indices (first - left, second - right)
     template <typename T>
     split_indices createSplit(std::string feature, T threshold) {
