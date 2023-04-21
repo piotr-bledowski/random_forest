@@ -41,6 +41,10 @@ public:
         return split_indices(left_indices, right_indices);
     }
 
+    // Returns a pair of feature and threshold
+    //template <typename T>
+    //std::pair<std::string, T> bestSplit()
+
     template <typename feature_T, typename target_T>
     double informationGain(std::string feature, std::string target, feature_T threshold) {
         Column<target_T>* parent = std::get<Column<target_T>*>(data_.getColumn(target));
