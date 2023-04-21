@@ -12,6 +12,7 @@
 #include "../utils/informationUtils.h"
 #include "../utils/expressions.h"
 #include "node.h"
+#include <any>
 
 using split_indices = std::pair<std::vector<size_t>, std::vector<size_t>>;
 
@@ -43,15 +44,47 @@ public:
 
     // Returns a pair of feature and threshold
     template <typename target_T>
-    std::pair<std::string, target_T> bestSplit(std::vector<std::string> features, std::string target) {
+    std::pair<std::string, std::any> bestSplit(const std::vector<std::string>& features, const std::string& target) {
         double max_gain = -1.0;
         std::string best_feature = "";
         double best_threshold = 0.0;
 
         for (std::string feature : features) {
             column_t column = data_.getColumn(feature);
-            
+            std::type_index type = data_.getType(feature);
+
+            if (type == typeid(long)) {
+                std::vector<long> thresholds = std::get<Column<long>*>(column)->data();
+
+                for (long threshold : thresholds) {
+                    double gain = informationGain<long, target_T>(feature, target, threshold);
+
+                    if (gain > max_gain) {
+                        max_gain = gain;
+                        best_feature = feature;
+                        best_threshold = threshold;
+                    }
+                }
+            }
+            else if (type == typeid(double)) {
+                std::vector<double> thresholds = std::get<Column<double>*>(column)->data();
+
+                for (double threshold : thresholds) {
+                    double gain = informationGain<double, target_T>(feature, target, threshold);
+
+                    if (gain > max_gain) {
+                        max_gain = gain;
+                        best_feature = feature;
+                        best_threshold = threshold;
+                    }
+                }
+            }
+            else {
+                throw std::runtime_error("The extrement has impacted the rotating blades!");
+            }
         }
+
+        return std::make_pair(best_feature, best_threshold);
     }
 
     template <typename feature_T, typename target_T>
